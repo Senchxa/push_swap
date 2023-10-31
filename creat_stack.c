@@ -1,21 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   creat_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnoll <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 18:28:14 by dnoll             #+#    #+#             */
-/*   Updated: 2023/10/31 13:12:19 by dnoll            ###   ########.fr       */
+/*   Created: 2023/10/31 11:59:10 by dnoll             #+#    #+#             */
+/*   Updated: 2023/10/31 13:17:27 by dnoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//
-//
-int	main(int ac, char **av)
+#include "push_swap.h"
+
+t_stack	*create_stack(int ac, char **av)
 {
-	t_stack	*stack_a;
+	int	i;
+	int	j;
+	t_stack	stack_a;
 
-	stack_a = /*create_stack...*/
-
+	i = 1;
+	j = 0;
+	stack_a = NULL;
+	if (ac < 2)
+	{
+		return(0);
+	}
+	else if (ac == 2)
+	{
+		stack_a = /*single input*/;
+	}
+	else
+	{
+		while (i < ac)
+		{
+			/*node to stack*/;
+			i++;
+		}
+	}
+	return (stack_a);
 }

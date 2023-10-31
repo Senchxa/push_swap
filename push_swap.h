@@ -6,7 +6,7 @@
 /*   By: dnoll <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 17:51:40 by dnoll             #+#    #+#             */
-/*   Updated: 2023/10/30 17:54:21 by dnoll            ###   ########.fr       */
+/*   Updated: 2023/10/31 13:11:21 by dnoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,24 @@
 
 # define PUSH_SWAP_H
 
-typedef struct s_node
-{
-	int	value;
-	int	index;
-
-	struct s_node *next;
-}	t_node
+# include <stdlib.h>
+# include <stddef.h>
 
 
 typedef struct s_stack
 {
 	int	size;
+	int	index;
+
+	t_stack	*next;
 
 }	t_stack
 
+int	ft_strlen(char *str);
+int	count_words(const char *str, char c);
+
+char	*ft_substr(char const *str, unsigned int start, size_t len);
+char	*ft_strdup(const char *str);
+char	**ft_mysplit(char **split, char const *str, char c);
+char	**ft_split(char const *str, char c);
 #endif
