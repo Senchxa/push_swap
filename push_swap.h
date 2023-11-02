@@ -6,7 +6,7 @@
 /*   By: dnoll <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 17:51:40 by dnoll             #+#    #+#             */
-/*   Updated: 2023/10/31 13:11:21 by dnoll            ###   ########.fr       */
+/*   Updated: 2023/11/02 11:33:22 by dnoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 # include <stdlib.h>
 # include <stddef.h>
+# include <stdio.h>
 
 
 typedef struct s_stack

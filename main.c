@@ -6,16 +6,18 @@
 /*   By: dnoll <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 18:28:14 by dnoll             #+#    #+#             */
-/*   Updated: 2023/10/31 13:12:19 by dnoll            ###   ########.fr       */
+/*   Updated: 2023/11/02 11:44:10 by dnoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//
-//
+#include "push_swap.h"
+
 int	main(int ac, char **av)
 {
 	t_stack	*stack_a;
 
-	stack_a = /*create_stack...*/
+	stack_a = create_stack(ac, av);
+	
+	/*if (!stack)...*/
 
 }
