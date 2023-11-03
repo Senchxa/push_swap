@@ -1,31 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   utils_main.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnoll <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 18:28:14 by dnoll             #+#    #+#             */
-/*   Updated: 2023/11/03 12:27:13 by dnoll            ###   ########.fr       */
+/*   Created: 2023/11/03 11:04:39 by dnoll             #+#    #+#             */
+/*   Updated: 2023/11/03 12:18:21 by dnoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+int	check_dup(t_stack *stack_A)
 {
-	t_stack	*stack_a;
-
-	stack_a = create_stack(ac, av);
-	
-	if (!stack || check_dup(stack_a) == 1)
+	t_stack	*tmp;
+	while (stack_A != NULL)
 	{
-		free_stack(&stack_a);
-
+		tmp = stack_A->next;
+		while (tmp != NULL)
+		{
+			if (tmp->num == stack_A->num)
+			{
+				return (1);
+			}
+			tmp = tmp->next;
+		}
+		stack_A = stack_A->next;
 	}
-	if (check_sorted(stack_a) != 1)
+	return (0);
+}
+
+void	free_stack(t_stack **nodes)
+{
+	t_stack	*next_node;
+
+	if(!nodes)
 	{
-		/*sort(&stack_a);*/
+		return ;
 	}
-
+	while (*nodes)
+	{
+		next_node = (*nodes)->next;
+		(*nodes)-> = 0;
+		free(*nodes);
+		(*nodes) = next_node;
+	}
 }

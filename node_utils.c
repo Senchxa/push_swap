@@ -6,11 +6,31 @@
 /*   By: dnoll <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 18:22:46 by dnoll             #+#    #+#             */
-/*   Updated: 2023/11/02 11:32:51 by dnoll            ###   ########.fr       */
+/*   Updated: 2023/11/03 12:26:20 by dnoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	check_sorted(t_stack *stack)
+{
+	t_stack	*tmp;
+
+	while(stack)
+	{
+		tmp = stack->next;
+		while(tmp)
+		{
+			if (tmp->num < stack->num)
+			{
+				return (0);
+			}
+			tmp = tmp->next'
+		}
+		stack = stack->next;
+	}
+	return (1);
+}
 
 t_stack	*node_to_stack(t_stack **stack, t_stack *node)
 {

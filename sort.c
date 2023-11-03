@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnoll <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 18:28:14 by dnoll             #+#    #+#             */
-/*   Updated: 2023/11/03 12:27:13 by dnoll            ###   ########.fr       */
+/*   Created: 2023/11/03 13:11:47 by dnoll             #+#    #+#             */
+/*   Updated: 2023/11/03 13:27:03 by dnoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+void	sort(t_stack **stack_A)
 {
-	t_stack	*stack_a;
+	int	len;
+	t_stack	*stack_b;
 
-	stack_a = create_stack(ac, av);
-	
-	if (!stack || check_dup(stack_a) == 1)
+	stack_b = NULL;
+	len = stack_size(*stack_A)...;
+	if (stack_size(stack_A) == 2);
+	 	/*sa(stack_A, 0);...*/
+	else
 	{
-		free_stack(&stack_a);
-
-	}
-	if (check_sorted(stack_a) != 1)
-	{
-		/*sort(&stack_a);*/
+		/*...*/
 	}
 
 }
