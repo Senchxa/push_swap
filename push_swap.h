@@ -1,67 +1,92 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dnoll <dnoll@studen.42.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/18 13:01:46 by dnoll             #+#    #+#             */
+/*   Updated: 2024/01/10 15:11:33 by dnoll            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdlib.h>
-# include <limits.h>
-# include <stdbool.h>
 # include <unistd.h>
+# include <stdlib.h>
+
+//stdio
 # include <stdio.h>
 
-typedef struct s_stack_node
+typedef struct stack
 {
-	int					value;
-	int					current_position;
-	int					final_index;
-	int					push_price;
-	bool				above_median;
-	bool				cheapest;
-	struct s_stack_node	*target_node;
-	struct s_stack_node	*next;
-	struct s_stack_node	*prev;
-}				t_stack_node;	
+    long int num;
+    int     index;
+    struct stack *next;
+} stack;
 
-//*** Handle input ./push_swap "1 -42 1337" ***
-char			**ft_split(char *str, char separator);
+//ft_input_to_stack
+void ft_free_array(char **array);
+stack* ft_input_to_stack(int ac, char **av);
+stack* one_input(char **av);
 
-//*** Handle errors-free ***
-void			free_matrix(char **argv);
-void			error_free(t_stack_node **a, char **argv, bool flag_argc_2);
-void			free_stack(t_stack_node **stack);
-int				error_repetition(t_stack_node *a, int nbr);
-int				error_syntax(char *str_nbr);
+//print_utils.c
+void	putstr(char *s, int fd);
 
-//*** Stack creation ***
-void			stack_init(t_stack_node **a, char **argv, bool flag_argc_2);
-void			init_nodes(t_stack_node *a, t_stack_node *b);
-void			set_current_position(t_stack_node *stack);
-void			set_price(t_stack_node *a, t_stack_node *b);
-void			set_cheapest(t_stack_node *b);
+//ft_rulec.c
+void    ft_sa(stack **stack_a);
+void ft_ra(stack **stack_a);
+void ft_pb(stack **stack_a, stack **stack_b);
+void ft_pa(stack **stack_a, stack **stack_b);
+void ft_rra(stack **stack_a);
 
-//*** linked list utils ***
-void			append_node(t_stack_node **stack, int nbr);
-t_stack_node	*find_last_node(t_stack_node *head);
-t_stack_node	*find_smallest(t_stack_node *stack);
-t_stack_node	*return_cheapest(t_stack_node *stack);
-bool			stack_sorted(t_stack_node *stack);
-int				stack_len(t_stack_node *stack);
-void			finish_rotation(t_stack_node **s, t_stack_node *n, char c);
+//ft_index.c
+void ft_bubble_sort(int num[], int n);
+void ft_indexing(stack *stack_a);
+int* ft_arr(stack *stack_a);
+int ft_indexer(int num[], int i, int j, int nbr);
 
-//*** Algorithms ***
-void			tiny_sort(t_stack_node **a);
-void			handle_five(t_stack_node **a, t_stack_node **b);
-void			push_swap(t_stack_node **a, t_stack_node **b);
 
-//*** Commands ***
-void			sa(t_stack_node **a, bool checker);
-void			sb(t_stack_node **b, bool checker);
-void			ss(t_stack_node **a, t_stack_node **b, bool checker);
-void			ra(t_stack_node **a, bool checker);
-void			rb(t_stack_node **b, bool checker);
-void			rr(t_stack_node **a, t_stack_node **b, bool checker);
-void			rra(t_stack_node **a, bool checker);
-void			rrb(t_stack_node **b, bool checker);
-void			rrr(t_stack_node **a, t_stack_node **b, bool checker);
-void			pa(t_stack_node **a, t_stack_node **b, bool checker);
-void			pb(t_stack_node **b, t_stack_node **a, bool checker);
+//ft_sorting.c
+void ft_sort3(stack **stack_a);
+void ft_minitop(stack **stack_a, int upperlimit);
+void    ft_sort5(stack **stack_a, stack **stack_b);
+void ft_sorting(stack **stack_a);
+int ft_stacklen(stack *stack_a);
+int ft_findindex(stack *stack_a);
 
+//ft_radix_sort.c
+void ft_bit_sort(stack **stack_a, stack **stack_b, int max_bits);
+void ft_radix_sort(stack **stack_a, stack **stack_b);
+
+
+
+//help_funcs.c
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+size_t	ft_strlen(const char *s);
+void	*ft_bzero(void *str, size_t n);
+void	*ft_memset(void *str, int c, size_t n);
+char	*ft_strdup(const char *src);
+
+//ft_check.c
+int ft_duplicate(stack *stack_a);
+int ft_sorted(stack *stack_a);
+
+
+
+//ft_error_handler.c
+void    ft_error_handler(int n);
+
+//ft_node_handler.c
+stack* ft_new_node(int n);
+stack* ft_node_to_stack(stack **stack_a, stack *node);
+stack* ft_last_node(stack *stack);
+void ft_clean_all(stack *stack_a);
+
+//ft_atoi.c
+int	ft_atoi(const char *str);
+
+//ft_split.c
+char **ft_split(const char *s, char c);
 #endif
