@@ -6,7 +6,7 @@
 /*   By: dnoll <dnoll@studen.42.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:52:07 by dnoll             #+#    #+#             */
-/*   Updated: 2024/01/10 16:17:09 by dnoll            ###   ########.fr       */
+/*   Updated: 2024/01/15 16:18:53 by dnoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ int ft_indexer(int num[], int i, int j, int nbr)
 
 void ft_indexing(stack *stack_a)
 {
-    printf("indexing\n");
     int i;
     int index;
     int *input;
@@ -93,21 +92,15 @@ void ft_indexing(stack *stack_a)
     {
         copy[i] = input[i];
     }
-    printf("prvni smycka\n");
     ft_bubble_sort(copy, size);
-    printf("buuble sort\n");
     i = 0;
-    printf("i = %i size = %i\n", i ,size);
     while (i < size)
     {
-        printf("jsme ve smycce\n");
         index = ft_indexer(copy, 0, size - 1, input[i]);
-        printf("indexer probehl hladce\n");
         stack_a->index = index;
         stack_a = stack_a->next;
         i++;
     }
-    printf("smycka ok \n");
     free(copy);
     free(input);
 }

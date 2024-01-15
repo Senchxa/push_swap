@@ -6,7 +6,7 @@
 /*   By: dnoll <dnoll@studen.42.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 13:26:49 by dnoll             #+#    #+#             */
-/*   Updated: 2024/01/02 14:14:24 by dnoll            ###   ########.fr       */
+/*   Updated: 2024/01/15 14:46:45 by dnoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void    ft_error_handler(int n)
 {
     if(n == 1)
-        putstr("Wrong input:\n", 1);
+        putstr("Wrong input\n", 1);
     else if (n == 2)
         putstr("Stack is empty\n", 1);
     else if(n == 3)

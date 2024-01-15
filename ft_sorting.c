@@ -6,7 +6,7 @@
 /*   By: dnoll <dnoll@studen.42.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 17:10:41 by dnoll             #+#    #+#             */
-/*   Updated: 2024/01/10 15:55:28 by dnoll            ###   ########.fr       */
+/*   Updated: 2024/01/15 16:11:36 by dnoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,13 +121,18 @@ void ft_sorting(stack **stack_a)
     stack_b = NULL;
     if(ft_stacklen(*stack_a) == 2)
         ft_sa(stack_a);
+    else if (ft_stacklen(*stack_a) == 3)
+        {
+            ft_sort3(stack_a);
+
+        }
     else
     {        
         ft_indexing(*stack_a);
         if (ft_stacklen(*stack_a) == 5)
         {
             ft_sort5(stack_a, &stack_b);
-        }
+        }       
         else
         {
             ft_radix_sort(stack_a, &stack_b);

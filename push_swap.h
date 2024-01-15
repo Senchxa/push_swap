@@ -6,7 +6,7 @@
 /*   By: dnoll <dnoll@studen.42.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 13:01:46 by dnoll             #+#    #+#             */
-/*   Updated: 2024/01/10 15:11:33 by dnoll            ###   ########.fr       */
+/*   Updated: 2024/01/15 15:30:41 by dnoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <limits.h>
+
 
 //stdio
 # include <stdio.h>
