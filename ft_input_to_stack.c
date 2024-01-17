@@ -6,7 +6,7 @@
 /*   By: dnoll <dnoll@studen.42.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 13:12:18 by dnoll             #+#    #+#             */
-/*   Updated: 2024/01/03 16:36:24 by dnoll            ###   ########.fr       */
+/*   Updated: 2024/01/17 15:45:09 by dnoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ stack* one_input(char **av)
     stack_a = NULL;
     array = ft_split(av[1], ' ');
     while(array[i])
-    {   
+    { 
         j = ft_atoi(array[i]);
         ft_node_to_stack(&stack_a, ft_new_node(j));
         i++;

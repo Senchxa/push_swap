@@ -6,7 +6,7 @@
 /*   By: dnoll <dnoll@studen.42.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 14:58:14 by dnoll             #+#    #+#             */
-/*   Updated: 2024/01/15 15:47:49 by dnoll            ###   ########.fr       */
+/*   Updated: 2024/01/17 17:08:29 by dnoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,11 @@ int	ft_atoi(const char *str)
 	if (*str == '-')
 		sign *= -1;
 	if (*str == '+' || *str == '-')
+	{
+		if(*(str + 1) == '\0')
+			ft_error_handler(1);
 		str++;
+	}
 	while (*str)
 	{
 		if (*str < '0' || *str > '9')
