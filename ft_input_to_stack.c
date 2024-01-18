@@ -10,12 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*predelat ft_atoi a ft_split!
-!
-!
-!*/
-
 #include "push_swap.h"
+
+//standalone + or -
+void ft_plus_minus_check(char **array)
+{
+    int i;
+
+    i = 0;
+    while (array[i])
+    {
+        if((array[i][0] == '+' || array[i][0] == '-') && array[i][1] == '\0')
+            {
+                ft_free_array(array);
+                ft_error_handler(1);
+            }
+            i++;
+    }
+}
 
 void ft_free_array(char **array)
 {
@@ -44,14 +56,16 @@ stack* one_input(char **av)
     j = 0;
     stack_a = NULL;
     array = ft_split(av[1], ' ');
+    ft_plus_minus_check(array);
+   
     while(array[i])
-    { 
+    {
         j = ft_atoi(array[i]);
         ft_node_to_stack(&stack_a, ft_new_node(j));
         i++;
     }
     ft_free_array(array);
-    return (stack_a);
+    return (stack_a);   
 }
 
 stack* ft_input_to_stack(int ac, char **av)
@@ -80,9 +94,5 @@ stack* ft_input_to_stack(int ac, char **av)
             i++;
         }
     }
-    
     return (stack_a);
-    
-    
-    
 }

@@ -24,19 +24,23 @@ int	ft_atoi(const char *str)
 		str++;
 	if (*str == '-')
 		sign *= -1;
-	if (*str == '+' || *str == '-')
+	/*if (*str == '+' || *str == '-')
 	{
 		if(*(str + 1) == '\0')
-			ft_error_handler(1);
+			;
 		str++;
-	}
+	}*/
 	while (*str)
 	{
-		if (*str < '0' || *str > '9')
-			ft_error_handler(1);
+		/*if (*str < '0' || *str > '9')
+			{
+				ft_error_handler(1);
+			}
 		if (output > (INT_MAX - (*str - '0')) / 10)
-			ft_error_handler(1);
-		
+			{
+				ft_error_handler(1);
+			}
+		*/
 		output = output * 10 + (*str - '0');
 		str++;
 	}
