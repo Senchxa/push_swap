@@ -6,28 +6,11 @@
 /*   By: dnoll <dnoll@studen.42.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 13:12:18 by dnoll             #+#    #+#             */
-/*   Updated: 2024/01/17 15:45:09 by dnoll            ###   ########.fr       */
+/*   Updated: 2024/01/18 20:37:06 by dnoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-//standalone + or -
-void ft_plus_minus_check(char **array)
-{
-    int i;
-
-    i = 0;
-    while (array[i])
-    {
-        if((array[i][0] == '+' || array[i][0] == '-') && array[i][1] == '\0')
-            {
-                ft_free_array(array);
-                ft_error_handler(1);
-            }
-            i++;
-    }
-}
 
 void ft_free_array(char **array)
 {
@@ -56,11 +39,17 @@ stack* one_input(char **av)
     j = 0;
     stack_a = NULL;
     array = ft_split(av[1], ' ');
-    ft_plus_minus_check(array);
+    //ft_plus_minus_check(array);
    
     while(array[i])
     {
         j = ft_atoi(array[i]);
+        if (j == INT_MAX)
+        {
+            ft_free_array(array);
+            ft_clean_all(stack_a);
+            ft_error_handler(1);
+        }
         ft_node_to_stack(&stack_a, ft_new_node(j));
         i++;
     }
@@ -90,6 +79,11 @@ stack* ft_input_to_stack(int ac, char **av)
         while (i < ac)
         {
             j = ft_atoi(av[i]);
+            if (j == INT_MAX)
+            {   
+                ft_clean_all(stack_a);
+                ft_error_handler(1);
+            }
             ft_node_to_stack(&stack_a, ft_new_node(j));
             i++;
         }
